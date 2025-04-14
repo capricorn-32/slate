@@ -2,6 +2,8 @@
 
 import { useEditor, EditorContent } from "@tiptap/react";
 import TaskItem from "@tiptap/extension-task-item";
+import Highlight from "@tiptap/extension-highlight";
+import { Color } from "@tiptap/extension-color";
 import TaskList from "@tiptap/extension-task-list";
 import StarterKit from "@tiptap/starter-kit";
 import Table from "@tiptap/extension-table";
@@ -13,6 +15,7 @@ import TableRow from "@tiptap/extension-table-row";
 import FontFamily from "@tiptap/extension-font-family";
 import TextStyle from "@tiptap/extension-text-style";
 import Underline from "@tiptap/extension-underline";
+import Link from "@tiptap/extension-link";
 
 import { useEditorStore } from "@/store/use-editor-store";
 
@@ -62,6 +65,14 @@ export const Editor = () => {
       Underline,
       FontFamily,
       TextStyle,
+      Color,
+      Link.configure({
+        openOnClick: false,
+        autolink: true,
+      }),
+      Highlight.configure({
+        multicolor: true,
+      }),
       TaskItem.configure({
         nested: true,
       }),
@@ -80,16 +91,7 @@ export const Editor = () => {
                   <td>Actress</td>
                 </tr>
               </tbody>
-            </table>
-
-            <p><span style="font-family: Inter">Did you know that Inter is a really nice font for interfaces?</span></p>
-                    <p><span style="font-family: Comic Sans MS, Comic Sans">It doesn’t look as professional as Comic Sans.</span></p>
-                    <p><span style="font-family: serif">Serious people use serif fonts anyway.</span></p>
-                    <p><span style="font-family: monospace">The cool kids can apply monospace fonts aswell.</span></p>
-                    <p><span style="font-family: cursive">But hopefully we all can agree, that cursive fonts are the best.</span></p>
-                    <p><span style="font-family: var(--title-font-family)">Then there are CSS variables, the new hotness.</span></p>
-                    <p><span style="font-family: 'Exo 2'">TipTap even can handle exotic fonts as Exo 2.</span></p>
-          `,
+            </table>`,
   });
 
   return (
