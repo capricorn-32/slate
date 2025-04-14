@@ -89,9 +89,9 @@ body {
 
 .tiptap {
     /* Base style */
-    :first-child {
+    /* :first-child {
         margin-top: 0;
-    }
+    } */
 
     /* Heading styles */
     h1,
