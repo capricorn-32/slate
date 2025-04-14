@@ -77,6 +77,10 @@ body {
         --sidebar-ring: 217.2 91.2% 59.8%;
     }
 }
+/*
+html {
+    --title-font-family: "Helvetica", sans-serif;
+} */
 
 @layer base {
     * {
